@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 
-    id("kotlin-kapt")
+
 
 }
 
@@ -53,12 +53,12 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation(libs.converter.gson)
 
 
-    implementation(libs.glide)
-    kapt("com.github.bumptech.glide:compiler:4.16.0")
+    implementation(libs.picasso)
+
 
 
     implementation(libs.androidx.recyclerview)

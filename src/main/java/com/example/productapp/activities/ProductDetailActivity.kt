@@ -4,10 +4,10 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
 import com.example.productapp.databinding.ActivityProductDetailBinding
 import com.example.productapp.model.Product
 import com.example.productapp.utils.CartManager
+import com.squareup.picasso.Picasso
 
 @Suppress("DEPRECATION")
 class ProductDetailActivity : AppCompatActivity() {
@@ -36,9 +36,11 @@ class ProductDetailActivity : AppCompatActivity() {
                "• Screen Size: ${product.specs.screenSize}"
            ).joinToString("\n")
 
-            Glide.with(this@ProductDetailActivity)
+            Picasso.get()
                 .load(product.imageUrl)
-                .into(ivImage)
+                .resize(500, 500) // Optional: Resize for performance
+                .centerCrop()
+                .into(binding.ivImage)
 
             btnAddToCart.setOnClickListener {
                 CartManager.addToCart(product)

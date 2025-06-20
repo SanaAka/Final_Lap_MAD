@@ -3,7 +3,8 @@ package com.example.productapp.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.squareup.picasso.Picasso
+
 import com.example.productapp.databinding.ItemCartBinding
 import com.example.productapp.model.Product
 
@@ -23,7 +24,8 @@ class CartAdapter(private val products: List<Product>) : RecyclerView.Adapter<Ca
         with(holder.binding) {
             tvName.text = product.name
             tvPrice.text = "$${product.price}"
-            Glide.with(ivImage).load(product.imageUrl).into(ivImage)
+            Picasso.get().load(product.imageUrl).into(ivImage)
+
         }
     }
 }

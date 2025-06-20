@@ -8,14 +8,14 @@
 
     <SearchView
         android:id="@+id/searchView"
-        android:queryHint="Search product name..."
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:queryHint="Search product name..." />
 
     <Button
         android:id="@+id/btnCart"
         android:layout_marginTop="8dp"
-        android:text="🛒 Cart"
+        android:text=" Cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
